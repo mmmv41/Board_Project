@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Posts")
+@Table(name = "Posts") //데이터베이스에서 사용할 테이블 이름
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,12 @@ public class Post {
 
     @Column(length = 350, nullable = false)
     private String title;
+
+    @Column(nullable = false)
     private String content;
 
     @Column(nullable = false)
-    private int author_Id;
+    private String author;
 
     private int liked;
 
